@@ -24,7 +24,6 @@
 								  <base-input label="ReviewId" type="text" placeholder="Enter ReviewId" v-model="reviewToAdd.reviewId"></base-input>
 								  <base-input label="Rating" type="text" placeholder="Enter Rating" v-model="reviewToAdd.rating"></base-input>
 								  <base-input label="Comment" type="text" placeholder="Enter Comment" v-model="reviewToAdd.comment"></base-input>
-								  <base-input label="ReviewDate" type="text" placeholder="Enter ReviewDate" v-model="reviewToAdd.reviewDate"></base-input>
 												                  </form>
 								                </div>
 								                <template slot="footer">
@@ -85,14 +84,6 @@
 										    <td class="detail_view_column_1">
 							<div class="detail_view_input" style="display: inline-flex;">
 																		<input label="Comment" type="text" placeholder="Enter Comment" v-model="reviewDetails.comment"></input>
-																		</div>
-						</td>
-														</tr>
-															<tr> 
-					<td class="detail_view_column_2">Review Date</td>
-										    <td class="detail_view_column_1">
-							<div class="detail_view_input" style="display: inline-flex;">
-																		<datepicker v-model="reviewDetails.reviewDate"  placeholder="Select Date" ></datepicker>
 																		</div>
 						</td>
 														</tr>

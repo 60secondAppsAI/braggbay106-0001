@@ -36,8 +36,8 @@
                 <div>
                   <form @submit.prevent>
   <base-input label="BidId" type="text" placeholder="Enter BidId" v-model="bidToAdd.bidId"></base-input>
-  <base-input label="BidAmount" type="text" placeholder="Enter BidAmount" v-model="bidToAdd.bidAmount"></base-input>
-  <base-input label="BidTime" type="text" placeholder="Enter BidTime" v-model="bidToAdd.bidTime"></base-input>
+  <base-input label="Amount" type="text" placeholder="Enter Amount" v-model="bidToAdd.amount"></base-input>
+  <base-input label="Timestamp" type="text" placeholder="Enter Timestamp" v-model="bidToAdd.timestamp"></base-input>
                   </form>
                 </div>
                 <template slot="footer">
@@ -140,22 +140,22 @@ export default {
           //sorter: (a, b) => a.bidId.localeCompare(b.bidId),
         },
         {
-          title: 'Bid Amount',
-		dataIndex: 'bidAmount',
+          title: 'Amount',
+		dataIndex: 'amount',
           visible: true,
-          scopedSlots: { customRender: 'bidAmount' },
+          scopedSlots: { customRender: 'amount' },
           sorter: true
-          //sorter: (a, b) => a.bidAmount - b.bidAmount,
-          //sorter: (a, b) => a.bidAmount.localeCompare(b.bidAmount),
+          //sorter: (a, b) => a.amount - b.amount,
+          //sorter: (a, b) => a.amount.localeCompare(b.amount),
         },
         {
-          title: 'Bid Time',
-		dataIndex: 'bidTime',
+          title: 'Timestamp',
+		dataIndex: 'timestamp',
           visible: true,
-          scopedSlots: { customRender: 'bidTime' },
+          scopedSlots: { customRender: 'timestamp' },
           sorter: true
-          //sorter: (a, b) => a.bidTime - b.bidTime,
-          //sorter: (a, b) => a.bidTime.localeCompare(b.bidTime),
+          //sorter: (a, b) => a.timestamp - b.timestamp,
+          //sorter: (a, b) => a.timestamp.localeCompare(b.timestamp),
         },
       ],
       pagination: {
@@ -240,23 +240,29 @@ export default {
     routingToUserDetail(id) {
       this.$router.push({ name: 'UserDetail', params: { userId: id.toString() }})
     },
-    routingToItemDetail(id) {
-      this.$router.push({ name: 'ItemDetail', params: { itemId: id.toString() }})
+    routingToCategoryDetail(id) {
+      this.$router.push({ name: 'CategoryDetail', params: { categoryId: id.toString() }})
+    },
+    routingToProductDetail(id) {
+      this.$router.push({ name: 'ProductDetail', params: { productId: id.toString() }})
     },
     routingToBidDetail(id) {
       this.$router.push({ name: 'BidDetail', params: { bidId: id.toString() }})
     },
-    routingToCategoryDetail(id) {
-      this.$router.push({ name: 'CategoryDetail', params: { categoryId: id.toString() }})
+    routingToAuctionDetail(id) {
+      this.$router.push({ name: 'AuctionDetail', params: { auctionId: id.toString() }})
     },
     routingToPaymentDetail(id) {
       this.$router.push({ name: 'PaymentDetail', params: { paymentId: id.toString() }})
     },
-    routingToAddressDetail(id) {
-      this.$router.push({ name: 'AddressDetail', params: { addressId: id.toString() }})
+    routingToOrderDetail(id) {
+      this.$router.push({ name: 'OrderDetail', params: { orderId: id.toString() }})
     },
     routingToReviewDetail(id) {
       this.$router.push({ name: 'ReviewDetail', params: { reviewId: id.toString() }})
+    },
+    routingToMessageDetail(id) {
+      this.$router.push({ name: 'MessageDetail', params: { messageId: id.toString() }})
     },
     
     handleSearchQueryChanged() {

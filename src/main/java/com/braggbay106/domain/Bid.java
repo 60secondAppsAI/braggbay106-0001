@@ -31,11 +31,11 @@ public class Bid {
   	@Column(name="bid_id")
 	private Integer bidId;
     
-  	@Column(name="bid_amount")
-	private double bidAmount;
+  	@Column(name="amount")
+	private Double amount;
     
-  	@Column(name="bid_time")
-	private Date bidTime;
+  	@Column(name="timestamp")
+	private Date timestamp;
     
 	
 

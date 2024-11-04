@@ -72,10 +72,10 @@ public class BidServiceImpl extends GenericServiceImpl<Bid, Integer> implements 
 		bid.setBidId(bidDTO.getBidId());
 
 
-		bid.setBidAmount(bidDTO.getBidAmount());
+		bid.setAmount(bidDTO.getAmount());
 
 
-		bid.setBidTime(bidDTO.getBidTime());
+		bid.setTimestamp(bidDTO.getTimestamp());
 
 
 		LocalDate localDate = LocalDate.now();
@@ -161,10 +161,10 @@ public class BidServiceImpl extends GenericServiceImpl<Bid, Integer> implements 
 		bidDTO.setBidId(bid.getBidId());
 
 	
-		bidDTO.setBidAmount(bid.getBidAmount());
+		bidDTO.setAmount(bid.getAmount());
 
 	
-		bidDTO.setBidTime(bid.getBidTime());
+		bidDTO.setTimestamp(bid.getTimestamp());
 
 	
 
@@ -178,9 +178,9 @@ public class BidServiceImpl extends GenericServiceImpl<Bid, Integer> implements 
 
 		bid.setBidId(ControllerUtils.setValue(bid.getBidId(), bidDTO.getBidId()));
 
-		bid.setBidAmount(ControllerUtils.setValue(bid.getBidAmount(), bidDTO.getBidAmount()));
+		bid.setAmount(ControllerUtils.setValue(bid.getAmount(), bidDTO.getAmount()));
 
-		bid.setBidTime(ControllerUtils.setValue(bid.getBidTime(), bidDTO.getBidTime()));
+		bid.setTimestamp(ControllerUtils.setValue(bid.getTimestamp(), bidDTO.getTimestamp()));
 
 
 

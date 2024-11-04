@@ -72,7 +72,7 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
 		user.setUserId(userDTO.getUserId());
 
 
-		user.setUserName(userDTO.getUserName());
+		user.setUsername(userDTO.getUsername());
 
 
 		user.setPassword(userDTO.getPassword());
@@ -81,7 +81,7 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
 		user.setEmail(userDTO.getEmail());
 
 
-		user.setRegistrationDate(userDTO.getRegistrationDate());
+		user.setContactNumber(userDTO.getContactNumber());
 
 
 		LocalDate localDate = LocalDate.now();
@@ -105,10 +105,11 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
 	public ResponseEntity<UserPageDTO> getUsers(UserSearchDTO userSearchDTO) {
 	
 			Integer userId = userSearchDTO.getUserId(); 
- 			String userName = userSearchDTO.getUserName(); 
+ 			String username = userSearchDTO.getUsername(); 
  			String password = userSearchDTO.getPassword(); 
  			String email = userSearchDTO.getEmail(); 
-   			String sortBy = userSearchDTO.getSortBy();
+ 			String contactNumber = userSearchDTO.getContactNumber(); 
+ 			String sortBy = userSearchDTO.getSortBy();
 			String sortOrder = userSearchDTO.getSortOrder();
 			String searchQuery = userSearchDTO.getSearchQuery();
 			Integer page = userSearchDTO.getPage();
@@ -118,20 +119,22 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
 
 			spec = ControllerUtils.andIfNecessary(spec, userId, "userId"); 
 			
-			spec = ControllerUtils.andIfNecessary(spec, userName, "userName"); 
+			spec = ControllerUtils.andIfNecessary(spec, username, "username"); 
 			
 			spec = ControllerUtils.andIfNecessary(spec, password, "password"); 
 			
 			spec = ControllerUtils.andIfNecessary(spec, email, "email"); 
 			
- 			
+			spec = ControllerUtils.andIfNecessary(spec, contactNumber, "contactNumber"); 
+			
 
 		if (searchQuery != null && !searchQuery.isEmpty()) {
 			spec = spec.and((root, query, cb) -> cb.or(
 
-             cb.like(cb.lower(root.get("userName")), "%" + searchQuery.toLowerCase() + "%") 
+             cb.like(cb.lower(root.get("username")), "%" + searchQuery.toLowerCase() + "%") 
              , cb.like(cb.lower(root.get("password")), "%" + searchQuery.toLowerCase() + "%") 
              , cb.like(cb.lower(root.get("email")), "%" + searchQuery.toLowerCase() + "%") 
+             , cb.like(cb.lower(root.get("contactNumber")), "%" + searchQuery.toLowerCase() + "%") 
 		));}
 		
 		Sort sort = Sort.unsorted();
@@ -178,7 +181,7 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
 		userDTO.setUserId(user.getUserId());
 
 	
-		userDTO.setUserName(user.getUserName());
+		userDTO.setUsername(user.getUsername());
 
 	
 		userDTO.setPassword(user.getPassword());
@@ -187,7 +190,7 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
 		userDTO.setEmail(user.getEmail());
 
 	
-		userDTO.setRegistrationDate(user.getRegistrationDate());
+		userDTO.setContactNumber(user.getContactNumber());
 
 	
 
@@ -201,13 +204,13 @@ public class UserServiceImpl extends GenericServiceImpl<User, Integer> implement
 
 		user.setUserId(ControllerUtils.setValue(user.getUserId(), userDTO.getUserId()));
 
-		user.setUserName(ControllerUtils.setValue(user.getUserName(), userDTO.getUserName()));
+		user.setUsername(ControllerUtils.setValue(user.getUsername(), userDTO.getUsername()));
 
 		user.setPassword(ControllerUtils.setValue(user.getPassword(), userDTO.getPassword()));
 
 		user.setEmail(ControllerUtils.setValue(user.getEmail(), userDTO.getEmail()));
 
-		user.setRegistrationDate(ControllerUtils.setValue(user.getRegistrationDate(), userDTO.getRegistrationDate()));
+		user.setContactNumber(ControllerUtils.setValue(user.getContactNumber(), userDTO.getContactNumber()));
 
 
 

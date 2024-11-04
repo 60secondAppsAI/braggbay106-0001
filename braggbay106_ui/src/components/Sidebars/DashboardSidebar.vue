@@ -31,8 +31,14 @@
 				</a-menu-item>
 		
 				<a-menu-item>
-					<router-link to="/items">
-						<span class="label">Items</span>
+					<router-link to="/categorys">
+						<span class="label">Categorys</span>
+					</router-link>
+				</a-menu-item>
+		
+				<a-menu-item>
+					<router-link to="/products">
+						<span class="label">Products</span>
 					</router-link>
 				</a-menu-item>
 		
@@ -43,8 +49,8 @@
 				</a-menu-item>
 		
 				<a-menu-item>
-					<router-link to="/categorys">
-						<span class="label">Categorys</span>
+					<router-link to="/auctions">
+						<span class="label">Auctions</span>
 					</router-link>
 				</a-menu-item>
 		
@@ -55,14 +61,20 @@
 				</a-menu-item>
 		
 				<a-menu-item>
-					<router-link to="/addresss">
-						<span class="label">Addresss</span>
+					<router-link to="/orders">
+						<span class="label">Orders</span>
 					</router-link>
 				</a-menu-item>
 		
 				<a-menu-item>
 					<router-link to="/reviews">
 						<span class="label">Reviews</span>
+					</router-link>
+				</a-menu-item>
+		
+				<a-menu-item>
+					<router-link to="/messages">
+						<span class="label">Messages</span>
 					</router-link>
 				</a-menu-item>
 		

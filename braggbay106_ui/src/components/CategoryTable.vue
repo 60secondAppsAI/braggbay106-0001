@@ -240,23 +240,29 @@ export default {
     routingToUserDetail(id) {
       this.$router.push({ name: 'UserDetail', params: { userId: id.toString() }})
     },
-    routingToItemDetail(id) {
-      this.$router.push({ name: 'ItemDetail', params: { itemId: id.toString() }})
+    routingToCategoryDetail(id) {
+      this.$router.push({ name: 'CategoryDetail', params: { categoryId: id.toString() }})
+    },
+    routingToProductDetail(id) {
+      this.$router.push({ name: 'ProductDetail', params: { productId: id.toString() }})
     },
     routingToBidDetail(id) {
       this.$router.push({ name: 'BidDetail', params: { bidId: id.toString() }})
     },
-    routingToCategoryDetail(id) {
-      this.$router.push({ name: 'CategoryDetail', params: { categoryId: id.toString() }})
+    routingToAuctionDetail(id) {
+      this.$router.push({ name: 'AuctionDetail', params: { auctionId: id.toString() }})
     },
     routingToPaymentDetail(id) {
       this.$router.push({ name: 'PaymentDetail', params: { paymentId: id.toString() }})
     },
-    routingToAddressDetail(id) {
-      this.$router.push({ name: 'AddressDetail', params: { addressId: id.toString() }})
+    routingToOrderDetail(id) {
+      this.$router.push({ name: 'OrderDetail', params: { orderId: id.toString() }})
     },
     routingToReviewDetail(id) {
       this.$router.push({ name: 'ReviewDetail', params: { reviewId: id.toString() }})
+    },
+    routingToMessageDetail(id) {
+      this.$router.push({ name: 'MessageDetail', params: { messageId: id.toString() }})
     },
     
     handleSearchQueryChanged() {

@@ -22,6 +22,4 @@ public class ReviewSearchDTO {
 	
 	private String comment;
 	
-	private Date reviewDate;
-	
 }

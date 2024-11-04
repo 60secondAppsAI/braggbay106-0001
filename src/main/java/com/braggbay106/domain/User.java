@@ -31,8 +31,8 @@ public class User {
   	@Column(name="user_id")
 	private Integer userId;
     
-  	@Column(name="user_name")
-	private String userName;
+  	@Column(name="username")
+	private String username;
     
   	@Column(name="password")
 	private String password;
@@ -40,8 +40,8 @@ public class User {
   	@Column(name="email")
 	private String email;
     
-  	@Column(name="registration_date")
-	private Date registrationDate;
+  	@Column(name="contact_number")
+	private String contactNumber;
     
 	
 

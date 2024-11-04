@@ -14,13 +14,13 @@ public class UserDTO {
 
 	private Integer userId;
 
-	private String userName;
+	private String username;
 
 	private String password;
 
 	private String email;
 
-	private Date registrationDate;
+	private String contactNumber;
 
 
 

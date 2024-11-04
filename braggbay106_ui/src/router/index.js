@@ -2,18 +2,22 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Users from  '@/pages/Users.vue';
 import UserDetail from  '@/pages/UserDetail.vue';
-import Items from  '@/pages/Items.vue';
-import ItemDetail from  '@/pages/ItemDetail.vue';
-import Bids from  '@/pages/Bids.vue';
-import BidDetail from  '@/pages/BidDetail.vue';
 import Categorys from  '@/pages/Categorys.vue';
 import CategoryDetail from  '@/pages/CategoryDetail.vue';
+import Products from  '@/pages/Products.vue';
+import ProductDetail from  '@/pages/ProductDetail.vue';
+import Bids from  '@/pages/Bids.vue';
+import BidDetail from  '@/pages/BidDetail.vue';
+import Auctions from  '@/pages/Auctions.vue';
+import AuctionDetail from  '@/pages/AuctionDetail.vue';
 import Payments from  '@/pages/Payments.vue';
 import PaymentDetail from  '@/pages/PaymentDetail.vue';
-import Addresss from  '@/pages/Addresss.vue';
-import AddressDetail from  '@/pages/AddressDetail.vue';
+import Orders from  '@/pages/Orders.vue';
+import OrderDetail from  '@/pages/OrderDetail.vue';
 import Reviews from  '@/pages/Reviews.vue';
 import ReviewDetail from  '@/pages/ReviewDetail.vue';
+import Messages from  '@/pages/Messages.vue';
+import MessageDetail from  '@/pages/MessageDetail.vue';
 
 Vue.use(VueRouter)
 
@@ -27,7 +31,7 @@ let routes = [
 		path: '/',
 		name: 'Home',
 			redirect: '/users',
-								},
+										},
 	{
 		path: '/dashboard',
 		name: 'Dashboard',
@@ -57,16 +61,29 @@ let routes = [
 	    props: true // Pass route params as props to the component
   	},
 	{
-		path: '/items',
-		name: 'Items',
+		path: '/categorys',
+		name: 'Categorys',
 		layout: "dashboard",
-		component: Items,
+		component: Categorys,
 	},
 	{
-	    path: '/item/:itemId', 
-	    name: 'ItemDetail',
+	    path: '/category/:categoryId', 
+	    name: 'CategoryDetail',
 		layout: "dashboard",
-	    component: ItemDetail,
+	    component: CategoryDetail,
+	    props: true // Pass route params as props to the component
+  	},
+	{
+		path: '/products',
+		name: 'Products',
+		layout: "dashboard",
+		component: Products,
+	},
+	{
+	    path: '/product/:productId', 
+	    name: 'ProductDetail',
+		layout: "dashboard",
+	    component: ProductDetail,
 	    props: true // Pass route params as props to the component
   	},
 	{
@@ -83,16 +100,16 @@ let routes = [
 	    props: true // Pass route params as props to the component
   	},
 	{
-		path: '/categorys',
-		name: 'Categorys',
+		path: '/auctions',
+		name: 'Auctions',
 		layout: "dashboard",
-		component: Categorys,
+		component: Auctions,
 	},
 	{
-	    path: '/category/:categoryId', 
-	    name: 'CategoryDetail',
+	    path: '/auction/:auctionId', 
+	    name: 'AuctionDetail',
 		layout: "dashboard",
-	    component: CategoryDetail,
+	    component: AuctionDetail,
 	    props: true // Pass route params as props to the component
   	},
 	{
@@ -109,16 +126,16 @@ let routes = [
 	    props: true // Pass route params as props to the component
   	},
 	{
-		path: '/addresss',
-		name: 'Addresss',
+		path: '/orders',
+		name: 'Orders',
 		layout: "dashboard",
-		component: Addresss,
+		component: Orders,
 	},
 	{
-	    path: '/address/:addressId', 
-	    name: 'AddressDetail',
+	    path: '/order/:orderId', 
+	    name: 'OrderDetail',
 		layout: "dashboard",
-	    component: AddressDetail,
+	    component: OrderDetail,
 	    props: true // Pass route params as props to the component
   	},
 	{
@@ -132,6 +149,19 @@ let routes = [
 	    name: 'ReviewDetail',
 		layout: "dashboard",
 	    component: ReviewDetail,
+	    props: true // Pass route params as props to the component
+  	},
+	{
+		path: '/messages',
+		name: 'Messages',
+		layout: "dashboard",
+		component: Messages,
+	},
+	{
+	    path: '/message/:messageId', 
+	    name: 'MessageDetail',
+		layout: "dashboard",
+	    component: MessageDetail,
 	    props: true // Pass route params as props to the component
   	},
 	{

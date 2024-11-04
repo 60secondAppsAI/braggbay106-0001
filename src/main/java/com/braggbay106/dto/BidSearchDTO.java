@@ -18,8 +18,8 @@ public class BidSearchDTO {
 
 	private Integer bidId;
 	
-	private double bidAmount;
+	private Double amount;
 	
-	private Date bidTime;
+	private Date timestamp;
 	
 }

@@ -14,7 +14,7 @@ public class PaymentDTO {
 
 	private Integer paymentId;
 
-	private double amount;
+	private Double amount;
 
 	private Date paymentDate;
 

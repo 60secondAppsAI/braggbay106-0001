@@ -18,8 +18,6 @@ public class ReviewDTO {
 
 	private String comment;
 
-	private Date reviewDate;
-
 
 
 

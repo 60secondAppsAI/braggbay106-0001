@@ -78,9 +78,6 @@ public class ReviewServiceImpl extends GenericServiceImpl<Review, Integer> imple
 		review.setComment(reviewDTO.getComment());
 
 
-		review.setReviewDate(reviewDTO.getReviewDate());
-
-
 		LocalDate localDate = LocalDate.now();
 		ZoneId defaultZoneId = ZoneId.systemDefault();
 		Date date = Date.from(localDate.atStartOfDay(defaultZoneId).toInstant());
@@ -104,7 +101,7 @@ public class ReviewServiceImpl extends GenericServiceImpl<Review, Integer> imple
 			Integer reviewId = reviewSearchDTO.getReviewId(); 
  			Integer rating = reviewSearchDTO.getRating(); 
  			String comment = reviewSearchDTO.getComment(); 
-   			String sortBy = reviewSearchDTO.getSortBy();
+ 			String sortBy = reviewSearchDTO.getSortBy();
 			String sortOrder = reviewSearchDTO.getSortOrder();
 			String searchQuery = reviewSearchDTO.getSearchQuery();
 			Integer page = reviewSearchDTO.getPage();
@@ -118,7 +115,6 @@ public class ReviewServiceImpl extends GenericServiceImpl<Review, Integer> imple
 			
 			spec = ControllerUtils.andIfNecessary(spec, comment, "comment"); 
 			
- 			
 
 		if (searchQuery != null && !searchQuery.isEmpty()) {
 			spec = spec.and((root, query, cb) -> cb.or(
@@ -176,9 +172,6 @@ public class ReviewServiceImpl extends GenericServiceImpl<Review, Integer> imple
 		reviewDTO.setComment(review.getComment());
 
 	
-		reviewDTO.setReviewDate(review.getReviewDate());
-
-	
 
 		
 		return reviewDTO;
@@ -193,8 +186,6 @@ public class ReviewServiceImpl extends GenericServiceImpl<Review, Integer> imple
 		review.setRating(ControllerUtils.setValue(review.getRating(), reviewDTO.getRating()));
 
 		review.setComment(ControllerUtils.setValue(review.getComment(), reviewDTO.getComment()));
-
-		review.setReviewDate(ControllerUtils.setValue(review.getReviewDate(), reviewDTO.getReviewDate()));
 
 
 

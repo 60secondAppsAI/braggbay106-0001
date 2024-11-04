@@ -36,10 +36,10 @@
                 <div>
                   <form @submit.prevent>
   <base-input label="UserId" type="text" placeholder="Enter UserId" v-model="userToAdd.userId"></base-input>
-  <base-input label="UserName" type="text" placeholder="Enter UserName" v-model="userToAdd.userName"></base-input>
+  <base-input label="Username" type="text" placeholder="Enter Username" v-model="userToAdd.username"></base-input>
   <base-input label="Password" type="text" placeholder="Enter Password" v-model="userToAdd.password"></base-input>
   <base-input label="Email" type="text" placeholder="Enter Email" v-model="userToAdd.email"></base-input>
-  <base-input label="RegistrationDate" type="text" placeholder="Enter RegistrationDate" v-model="userToAdd.registrationDate"></base-input>
+  <base-input label="ContactNumber" type="text" placeholder="Enter ContactNumber" v-model="userToAdd.contactNumber"></base-input>
                   </form>
                 </div>
                 <template slot="footer">
@@ -142,13 +142,13 @@ export default {
           //sorter: (a, b) => a.userId.localeCompare(b.userId),
         },
         {
-          title: 'User Name',
-		dataIndex: 'userName',
+          title: 'Username',
+		dataIndex: 'username',
           visible: true,
-          scopedSlots: { customRender: 'userName' },
+          scopedSlots: { customRender: 'username' },
           sorter: true
-          //sorter: (a, b) => a.userName - b.userName,
-          //sorter: (a, b) => a.userName.localeCompare(b.userName),
+          //sorter: (a, b) => a.username - b.username,
+          //sorter: (a, b) => a.username.localeCompare(b.username),
         },
         {
           title: 'Password',
@@ -169,13 +169,13 @@ export default {
           //sorter: (a, b) => a.email.localeCompare(b.email),
         },
         {
-          title: 'Registration Date',
-		dataIndex: 'registrationDate',
+          title: 'Contact Number',
+		dataIndex: 'contactNumber',
           visible: true,
-          scopedSlots: { customRender: 'registrationDate' },
+          scopedSlots: { customRender: 'contactNumber' },
           sorter: true
-          //sorter: (a, b) => a.registrationDate - b.registrationDate,
-          //sorter: (a, b) => a.registrationDate.localeCompare(b.registrationDate),
+          //sorter: (a, b) => a.contactNumber - b.contactNumber,
+          //sorter: (a, b) => a.contactNumber.localeCompare(b.contactNumber),
         },
       ],
       pagination: {
@@ -260,23 +260,29 @@ export default {
     routingToUserDetail(id) {
       this.$router.push({ name: 'UserDetail', params: { userId: id.toString() }})
     },
-    routingToItemDetail(id) {
-      this.$router.push({ name: 'ItemDetail', params: { itemId: id.toString() }})
+    routingToCategoryDetail(id) {
+      this.$router.push({ name: 'CategoryDetail', params: { categoryId: id.toString() }})
+    },
+    routingToProductDetail(id) {
+      this.$router.push({ name: 'ProductDetail', params: { productId: id.toString() }})
     },
     routingToBidDetail(id) {
       this.$router.push({ name: 'BidDetail', params: { bidId: id.toString() }})
     },
-    routingToCategoryDetail(id) {
-      this.$router.push({ name: 'CategoryDetail', params: { categoryId: id.toString() }})
+    routingToAuctionDetail(id) {
+      this.$router.push({ name: 'AuctionDetail', params: { auctionId: id.toString() }})
     },
     routingToPaymentDetail(id) {
       this.$router.push({ name: 'PaymentDetail', params: { paymentId: id.toString() }})
     },
-    routingToAddressDetail(id) {
-      this.$router.push({ name: 'AddressDetail', params: { addressId: id.toString() }})
+    routingToOrderDetail(id) {
+      this.$router.push({ name: 'OrderDetail', params: { orderId: id.toString() }})
     },
     routingToReviewDetail(id) {
       this.$router.push({ name: 'ReviewDetail', params: { reviewId: id.toString() }})
+    },
+    routingToMessageDetail(id) {
+      this.$router.push({ name: 'MessageDetail', params: { messageId: id.toString() }})
     },
     
     handleSearchQueryChanged() {

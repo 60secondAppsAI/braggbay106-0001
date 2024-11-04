@@ -38,7 +38,6 @@
   <base-input label="ReviewId" type="text" placeholder="Enter ReviewId" v-model="reviewToAdd.reviewId"></base-input>
   <base-input label="Rating" type="text" placeholder="Enter Rating" v-model="reviewToAdd.rating"></base-input>
   <base-input label="Comment" type="text" placeholder="Enter Comment" v-model="reviewToAdd.comment"></base-input>
-  <base-input label="ReviewDate" type="text" placeholder="Enter ReviewDate" v-model="reviewToAdd.reviewDate"></base-input>
                   </form>
                 </div>
                 <template slot="footer">
@@ -158,15 +157,6 @@ export default {
           //sorter: (a, b) => a.comment - b.comment,
           //sorter: (a, b) => a.comment.localeCompare(b.comment),
         },
-        {
-          title: 'Review Date',
-		dataIndex: 'reviewDate',
-          visible: true,
-          scopedSlots: { customRender: 'reviewDate' },
-          sorter: true
-          //sorter: (a, b) => a.reviewDate - b.reviewDate,
-          //sorter: (a, b) => a.reviewDate.localeCompare(b.reviewDate),
-        },
       ],
       pagination: {
         current: 1,
@@ -250,23 +240,29 @@ export default {
     routingToUserDetail(id) {
       this.$router.push({ name: 'UserDetail', params: { userId: id.toString() }})
     },
-    routingToItemDetail(id) {
-      this.$router.push({ name: 'ItemDetail', params: { itemId: id.toString() }})
+    routingToCategoryDetail(id) {
+      this.$router.push({ name: 'CategoryDetail', params: { categoryId: id.toString() }})
+    },
+    routingToProductDetail(id) {
+      this.$router.push({ name: 'ProductDetail', params: { productId: id.toString() }})
     },
     routingToBidDetail(id) {
       this.$router.push({ name: 'BidDetail', params: { bidId: id.toString() }})
     },
-    routingToCategoryDetail(id) {
-      this.$router.push({ name: 'CategoryDetail', params: { categoryId: id.toString() }})
+    routingToAuctionDetail(id) {
+      this.$router.push({ name: 'AuctionDetail', params: { auctionId: id.toString() }})
     },
     routingToPaymentDetail(id) {
       this.$router.push({ name: 'PaymentDetail', params: { paymentId: id.toString() }})
     },
-    routingToAddressDetail(id) {
-      this.$router.push({ name: 'AddressDetail', params: { addressId: id.toString() }})
+    routingToOrderDetail(id) {
+      this.$router.push({ name: 'OrderDetail', params: { orderId: id.toString() }})
     },
     routingToReviewDetail(id) {
       this.$router.push({ name: 'ReviewDetail', params: { reviewId: id.toString() }})
+    },
+    routingToMessageDetail(id) {
+      this.$router.push({ name: 'MessageDetail', params: { messageId: id.toString() }})
     },
     
     handleSearchQueryChanged() {

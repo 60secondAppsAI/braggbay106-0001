@@ -32,7 +32,7 @@ public class Payment {
 	private Integer paymentId;
     
   	@Column(name="amount")
-	private double amount;
+	private Double amount;
     
   	@Column(name="payment_date")
 	private Date paymentDate;

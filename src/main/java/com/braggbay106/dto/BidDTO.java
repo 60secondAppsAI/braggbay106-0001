@@ -14,9 +14,9 @@ public class BidDTO {
 
 	private Integer bidId;
 
-	private double bidAmount;
+	private Double amount;
 
-	private Date bidTime;
+	private Date timestamp;
 
 
 

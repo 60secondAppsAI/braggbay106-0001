@@ -22,8 +22,8 @@
 								                <div>
 								                  <form @submit.prevent>
 								  <base-input label="BidId" type="text" placeholder="Enter BidId" v-model="bidToAdd.bidId"></base-input>
-								  <base-input label="BidAmount" type="text" placeholder="Enter BidAmount" v-model="bidToAdd.bidAmount"></base-input>
-								  <base-input label="BidTime" type="text" placeholder="Enter BidTime" v-model="bidToAdd.bidTime"></base-input>
+								  <base-input label="Amount" type="text" placeholder="Enter Amount" v-model="bidToAdd.amount"></base-input>
+								  <base-input label="Timestamp" type="text" placeholder="Enter Timestamp" v-model="bidToAdd.timestamp"></base-input>
 												                  </form>
 								                </div>
 								                <template slot="footer">
@@ -72,18 +72,18 @@
 						</td>
 														</tr>
 															<tr> 
-					<td class="detail_view_column_2">Bid Amount</td>
+					<td class="detail_view_column_2">Amount</td>
 										    <td class="detail_view_column_1">
 							<div class="detail_view_input" style="display: inline-flex;">
-																		<input label="BidAmount" type="text" placeholder="Enter BidAmount" v-model="bidDetails.bidAmount"></input>
+																		<input label="Amount" type="text" placeholder="Enter Amount" v-model="bidDetails.amount"></input>
 																		</div>
 						</td>
 														</tr>
 															<tr> 
-					<td class="detail_view_column_2">Bid Time</td>
+					<td class="detail_view_column_2">Timestamp</td>
 										    <td class="detail_view_column_1">
 							<div class="detail_view_input" style="display: inline-flex;">
-																		<datepicker v-model="bidDetails.bidTime"  placeholder="Select Date" ></datepicker>
+																		<datepicker v-model="bidDetails.timestamp"  placeholder="Select Date" ></datepicker>
 																		</div>
 						</td>
 														</tr>

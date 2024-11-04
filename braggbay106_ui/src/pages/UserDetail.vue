@@ -22,10 +22,10 @@
 								                <div>
 								                  <form @submit.prevent>
 								  <base-input label="UserId" type="text" placeholder="Enter UserId" v-model="userToAdd.userId"></base-input>
-								  <base-input label="UserName" type="text" placeholder="Enter UserName" v-model="userToAdd.userName"></base-input>
+								  <base-input label="Username" type="text" placeholder="Enter Username" v-model="userToAdd.username"></base-input>
 								  <base-input label="Password" type="text" placeholder="Enter Password" v-model="userToAdd.password"></base-input>
 								  <base-input label="Email" type="text" placeholder="Enter Email" v-model="userToAdd.email"></base-input>
-								  <base-input label="RegistrationDate" type="text" placeholder="Enter RegistrationDate" v-model="userToAdd.registrationDate"></base-input>
+								  <base-input label="ContactNumber" type="text" placeholder="Enter ContactNumber" v-model="userToAdd.contactNumber"></base-input>
 												                  </form>
 								                </div>
 								                <template slot="footer">
@@ -74,10 +74,10 @@
 						</td>
 														</tr>
 															<tr> 
-					<td class="detail_view_column_2">User Name</td>
+					<td class="detail_view_column_2">Username</td>
 										    <td class="detail_view_column_1">
 							<div class="detail_view_input" style="display: inline-flex;">
-																		<input label="UserName" type="text" placeholder="Enter UserName" v-model="userDetails.userName"></input>
+																		<input label="Username" type="text" placeholder="Enter Username" v-model="userDetails.username"></input>
 																		</div>
 						</td>
 														</tr>
@@ -98,10 +98,10 @@
 						</td>
 														</tr>
 															<tr> 
-					<td class="detail_view_column_2">Registration Date</td>
+					<td class="detail_view_column_2">Contact Number</td>
 										    <td class="detail_view_column_1">
 							<div class="detail_view_input" style="display: inline-flex;">
-																		<datepicker v-model="userDetails.registrationDate"  placeholder="Select Date" ></datepicker>
+																		<input label="ContactNumber" type="text" placeholder="Enter ContactNumber" v-model="userDetails.contactNumber"></input>
 																		</div>
 						</td>
 														</tr>

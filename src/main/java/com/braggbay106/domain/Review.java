@@ -37,9 +37,6 @@ public class Review {
   	@Column(name="comment")
 	private String comment;
     
-  	@Column(name="review_date")
-	private Date reviewDate;
-    
 	
 
 
